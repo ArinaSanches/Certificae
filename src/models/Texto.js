@@ -1,24 +1,16 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate');
-const ParticipacaoSchema = new mongoose.Schema({
+const TextoSchema = new mongoose.Schema({
     id_evento: {
         type: Schema.Types.ObjectId,
         ref: 'Evento',
         required: true,
     },
-    nome_pessoa: {
-        type: String,
-        required: true,
-    },
-    cpf: {
-        type: String,
-        required: true,
-    },
-    horas: {
-        type: Number,
-        required: true,
-    },
     texto: {
+        type: String,
+        required: true,
+    },
+    numero: {
         type: Number,
         required: true,
     },
@@ -28,6 +20,6 @@ const ParticipacaoSchema = new mongoose.Schema({
     },
 });
 
-ParticipacaoSchema.plugin(mongoosePaginate);
+TextoSchema.plugin(mongoosePaginate);
 
-mongoose.model('Participacao', ParticipacaoSchema);
+mongoose.model('Texto', TextoSchema);
