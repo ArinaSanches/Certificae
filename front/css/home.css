@@ -1,0 +1,30 @@
+body, html {
+    height: 100%;
+}
+
+img, embed, object, video {
+    max-width: 100%;
+}
+
+.icons{
+    width: 30px;
+    height: 30px;
+}
+
+body {
+    /* Full height */
+    height: 100%;
+    position: relative;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../img/background.jpg');
+}
+
+.container input {
+    position: relative;
+    height: 30%;
+    width: 60%;
+    margin-top:40%;
+}
