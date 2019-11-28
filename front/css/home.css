@@ -1,4 +1,4 @@
-body, html {
+html{
     height: 100%;
 }
 
@@ -6,25 +6,63 @@ img, embed, object, video {
     max-width: 100%;
 }
 
-.icons{
+.icons { 
     width: 30px;
     height: 30px;
 }
 
 body {
-    /* Full height */
     height: 100%;
-    position: relative;
-    /* Center and scale the image nicely */
+    width: 100%;
+    position: absolute;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url('../img/background.jpg');
 }
 
-.container input {
-    position: relative;
-    height: 30%;
-    width: 60%;
-    margin-top:40%;
+.container-fluid  {
+    position: fixed;
+    height: auto;
+    width: auto;
+    
+    margin: auto;
+    margin-top: 18%;
+    color: azure;
+}
+
+h5 {
+    font-size: 60px;
+}
+
+a {
+    font-weight: bold;
+}
+a .nav-link:hover{
+    color: #bd93d6;
+}
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    margin-left: 2%;
+}
+
+#input_cpf {
+    border-radius: 20px;
+}
+
+footer {
+    background-color: black;
+    height: 7%;
+} 
+
+.img_background {
+    max-width: 648px;
+    margin-bottom: 10%;
 }
