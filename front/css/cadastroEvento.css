@@ -17,14 +17,85 @@ body {
     position: relative;
     /* Center and scale the image nicely */
     background-position: center;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
     background-size: cover;
     background-image: url('../img/background.jpg');
+    
 }
 
-.container input {
-    position: relative;
-    height: 30%;
-    width: 60%;
-    margin-top:40%;
+.fixed-header{
+	position: fixed;
+	top : 0;
+	width: 100%;
+  height: 75px;
+}
+
+/*.nav-header{
+  padding: 25%;
+}*/
+
+#logo{
+	/*margin-right: 5%;
+	width: 100px;
+  height: 100px;*/
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+
+	border-radius: 50%;
+}
+.static-top{
+  position: fixed;
+  width: 100%;
+}
+
+#nomeEntidade{
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.sidebar {
+  position: fixed;
+  margin-top: 75px;
+  width: 90px !important;
+  min-height: calc(100vh - 56px);
+}
+
+.sidebar .nav-item:last-child {
+  margin-bottom: 1rem;
+}
+
+.sidebar .nav-item .nav-link {
+  text-align: center;
+  padding: 0.75rem 1rem;
+  width: 90px;
+}
+
+.sidebar .nav-item .nav-link span {
+  font-size: 0.65rem;
+  display: block;
+}
+
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 180px !important;
+  }
+  .sidebar .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    width: 180px;
+  }
+  .sidebar .nav-item .nav-link span {
+    font-size: 1rem;
+    display: inline;
+  }
+
+}
+#content-wrapper{
+  margin-top: 200px;
+
 }
