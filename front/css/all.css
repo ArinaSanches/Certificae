@@ -1,0 +1,38 @@
+html{
+    height: 100%;
+}
+
+img, embed, object, video {
+    max-width: 100%;
+}
+
+.icons { 
+    width: 30px;
+    height: 30px;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../img/background.jpg');
+}
+
+h5 {
+    font-size: 60px;
+}
+
+a {
+    font-weight: bold;
+}
+a .nav-link:hover{
+    color: #bd93d6;
+}
+
+footer {
+    background-color: black;
+    height: 7%;
+} 

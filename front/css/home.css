@@ -1,45 +1,12 @@
-html{
-    height: 100%;
-}
-
-img, embed, object, video {
-    max-width: 100%;
-}
-
-.icons { 
-    width: 30px;
-    height: 30px;
-}
-
-body {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('../img/background.jpg');
-}
 
 .container-fluid  {
     position: fixed;
     height: auto;
     width: auto;
-    
     margin: auto;
-    margin-top: 18%;
+    margin-top: 10%;
+    margin-left: 3%;
     color: azure;
-}
-
-h5 {
-    font-size: 60px;
-}
-
-a {
-    font-weight: bold;
-}
-a .nav-link:hover{
-    color: #bd93d6;
 }
 
 .btn-circle {
@@ -57,12 +24,11 @@ a .nav-link:hover{
     border-radius: 20px;
 }
 
-footer {
-    background-color: black;
-    height: 7%;
-} 
-
-.img_background {
+ #img_background {
     max-width: 648px;
-    margin-bottom: 10%;
+    z-index:-1;
+}
+
+#div_img {
+    z-index:-1;
 }
