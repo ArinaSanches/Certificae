@@ -1,12 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="shortcut icon" type="image/png" href="../img/certificate.png"/>
+    <title>Certificaê</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e405d5a62d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/login_entidade.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <script src="../js/sobre.js"></script>
 </head>
 <body>
-    EEEEEEEEEEEEEEEE
+    <nav class="navbar fixed-top navbar-light bg-light navbar-expand-lg">
+        <a class="navbar-brand" href="../index.html">Certificaê</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-2">
+            <li class="nav-item active">
+              <a class="nav-link links" href="../index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link links" href="sobre.html">SOBRE</a>
+            </li>
+          </ul>
+          
+          <form class="form-inline my-2 my-lg-2">
+            <input class="form-control mr-sm-2" type="search" placeholder="Nome entidade">
+            <button class="btn rounded-circle" type="submit"><img src="../img/search.png" class="icons"/></button>
+          </form>
+
+          <ul class="navbar-nav my-2 my-lg-2">
+            <li class="nav-item">
+              <a class="nav-link links" href="registrar_entidade.html">REGISTRAR</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link links" href="login_entidade.html">LOGIN</a>
+            </li>
+          </ul>
+
+        </div>
+    </nav>
+
+    <section class="container-fluid" id="conteudo">
+        <div class="row no-gutter">
+          <div class="d-none d-md-flex col-md-4 col-lg-3 bg-image"></div>
+          <div class="col-md-9 col-lg-9">
+            <div class="login d-flex align-items-center py-5">
+              <div class="container row">
+                <!-- <div class="row"> -->
+                  <div class="col-md-9 col-lg-8 mx-auto">
+                    <h3 class="login-heading mb-8">Facilite a sua vida! Cadastre-se em nosso sistema! :)</h3>
+                    <br><br>
+                    <form>
+                        <div class="form-label-group ">
+                            <input type="text" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
+                            <label for="inputNome">Nome</label>
+                        </div>
+
+                      <div class="row">
+                        <div class="form-label-group col">
+                          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                          <label for="inputEmail">Email</label>
+                        </div>
+
+                        <div class="form-label-group col">
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                            <label for="inputPassword">Senha</label>
+                          </div>
+
+                      </div>
+                        
+                      <div class="row">
+                          <div class="form-label-group col">
+                            <textarea id="inputDescricao" class="form-control"  required autofocus></textarea>
+                            <label for="inputDescricao">Descrição</label>
+                          </div>
+  
+                          <div class="form-label-group col">
+                              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                              <label for="inputPassword">Senha</label>
+                            </div>
+  
+                        </div>
+                      
+      
+                      
+                      <button class="btn btn-lg  btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" id="botao">Cadastrar</button>
+                      <!-- <div class="text-center">
+                        <a class="small" href="#">Forgot password?</a></div> -->
+                    </form>
+                  </div>
+                <!-- </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+   
+
+
+    <footer class="fixed-bottom bg-dark">      </footer>
 </body>
 </html>
