@@ -81,7 +81,12 @@ font-size: 0.65rem;
 display: block;
 }
 
-
+#content-wrapper{
+  float : left;
+  margin-top: 75px;
+  margin-left: 90px;
+  width: 100%;
+  }
 
 @media (min-width: 768px) {
 #nomeEntidade{
@@ -105,14 +110,15 @@ display: block;
   display: inline;
 }
 
+#content-wrapper{
+  float : left;
+  margin-top: 75px;
+  margin-left: 180px;
+  width: 100%;
+  }
+
 }
 
-#content-wrapper{
-float : left;
-margin-top: 5%;
-margin-left: 90px;
-width: 100%;
-}
 
 .card-header{
 text-align: center;
@@ -120,16 +126,14 @@ text-align: center;
 
 .container-fluid  {
 position: fixed;
+margin-left: 7%;
+margin-top: 4%;
+color: azure;
 height: 100%;
 width: 100%;
-margin-left: 10%;
-margin-top: 5%;
-color: azure;
 }
 
-h5 {
-font-size: 60px;
-}
+
 
 
 .form-group {
@@ -147,15 +151,20 @@ font-size: 60px;
   font-weight: 300;
 }
 
+
+
 #botao {
-  background-color: #F79E8B;
+  float: right;
   color: azure;
+  background-color: #F79E8B;
   border-radius: 2rem;
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 3rem;
   border-radius: 2rem;
+  margin-left: 2%;
 }
+
 
 input[type="date"]:before {
 content: attr(placeholder) !important;

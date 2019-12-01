@@ -61,17 +61,17 @@
         </li>
 
         <li class="nav-item ">
-          <a class="nav-link" href="../pages/sobre.html">
+          <a class="nav-link" href="../pages/editarEvento.html">
             <i class="fa fa-edit fa-fw"></i>
             <span>Editar</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/sobre.html">
+          <a class="nav-link" href="../pages/painelEntidade.html">
             <i class="fa fa-table fa-fw"></i>
             <span>Listar eventos</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../pages/sobre.html">
+          <a class="nav-link" href="../pages/cadastroEvento.html">
             <i class="fa fa-plus fa-fw"></i>
             <span>Add eventos</span></a>
         </li>
@@ -82,7 +82,7 @@
     <div id="content-wrapper">
     <div id="container">
         
-        <h2>Evento</h2>
+        <h1 class="heading mb-8" id="nomeEvento">Evento</h1>
 
         <div class="row no-gutters">
 
@@ -91,7 +91,7 @@
                     <div class="card">
                         <h5 class="card-header text-center font-weight-bold py-4">Textos</h5>
                         <div class="card-body">
-                            <div id="table" class="table-editable">
+                            <div id="table" class="table-editable">    
                             <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
                                     class="fa fa-plus icon fa-2x" aria-hidden="true"></i></a></span>
                             <table class="table table-bordered table-responsive-md table-striped text-center">
@@ -142,6 +142,7 @@
                             <h5 class="card-header text-center font-weight-bold py-4">Participantes</h5>
                             <div class="card-body">
                                 <div id="table" class="table-editable">
+                                <button class="btn" id="addCsv"><i class="fa fa-file-o"> Upar Arquivo</i></button>
                                 <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
                                         class="fa fa-plus icon fa-2x" aria-hidden="true"></i></a></span>
                                 <table class="table table-bordered table-responsive-md table-striped text-center">

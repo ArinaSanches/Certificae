@@ -118,6 +118,13 @@ body, html {
     /*background-color: red;*/
     width: 80%;
     } 
+
+    #nomeEvento{
+      color: azure;
+      margin-left: 43%;
+    }
+
+    
   }   
   
   .heading {
@@ -134,9 +141,9 @@ body, html {
 }
 
 #container{
-    text-align: center;
     margin-top: 5% ;
-    margin-left: 11%;
+    margin-left: 12%;
+    
 }
 
 td{
@@ -152,6 +159,15 @@ td{
 .card{
     margin-top: 8%;
 }
+
+
+
+
+#addCsv{
+  float: left;
+}
+
+
 
 
   
