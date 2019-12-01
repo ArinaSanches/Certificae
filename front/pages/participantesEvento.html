@@ -1,0 +1,199 @@
+<!-- page principal -->
+
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="../img/certificate.png"/>
+
+    <title>Certificaê</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/participantesEvento.css">
+    <script src="../js/cadastroEvento.js"></script>
+  </head>
+  <body>
+
+     <nav class="navbar fixed-header navbar-light bg-light navbar-expand-lg">
+          <a class="navbar-brand" href="#">Certificaê</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> 
+        
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-2">
+              <li class="nav-item active">
+                <a class="nav-link" href="../index.html">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/sobre.html">SOBRE</a>
+              </li>
+            </ul>
+            
+            <form class="form-inline my-2 my-lg-2">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar entidade">
+              <button class="btn rounded-circle" type="submit"><img src="../img/search.png" class="icons"/></button>
+            </form>
+
+            <ul class="navbar-nav my-2 my-lg-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">PERFIL</a>
+              </li>
+            </ul>
+
+          </div>
+      </nav>
+
+    <div id="wrapper">
+
+      <ul class="sidebar navbar-nav navbar-light bg-light  ">
+        <li class="nav-header"><img src="../img/logo.jpg" id = "logo"></li>
+
+        <li class="nav-item" id="nomeEntidade">
+            <p >Computacao</p>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link" href="../pages/sobre.html">
+            <i class="fa fa-edit fa-fw"></i>
+            <span>Editar</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/sobre.html">
+            <i class="fa fa-table fa-fw"></i>
+            <span>Listar eventos</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../pages/sobre.html">
+            <i class="fa fa-plus fa-fw"></i>
+            <span>Add eventos</span></a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div id="content-wrapper">
+    <div id="container">
+        
+        <h2>Evento</h2>
+
+        <div class="row no-gutters">
+
+            <div class="col no-gutters">
+                <div class="ladoTexto">
+                    <div class="card">
+                        <h5 class="card-header text-center font-weight-bold py-4">Textos</h5>
+                        <div class="card-body">
+                            <div id="table" class="table-editable">
+                            <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                                    class="fa fa-plus icon fa-2x" aria-hidden="true"></i></a></span>
+                            <table class="table table-bordered table-responsive-md table-striped text-center">
+                                <thead>
+                                <tr>
+                                    <th class="text-center ">Texto</th>
+                                    <th class="text-center ">Num</th>
+                                    <th class="text-center ">Remove</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                    <td class="pt-3-half" contenteditable="true">30</td>
+                                    <td>
+                                    <span class="table-remove"><button type="button"
+                                        class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                                    </td>
+                                </tr>
+                                <!-- This is our clonable table line -->
+                                <tr>
+                                    <td class="pt-3-half" contenteditable="true">Guerra Cortez</td>
+                                    <td class="pt-3-half" contenteditable="true">45</td>
+                                    <td>
+                                    <span class="table-remove"><button type="button"
+                                        class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                                    </td>
+                                </tr>
+                                <!-- This is our clonable table line -->
+                                <tr>
+                                    <td class="pt-3-half" contenteditable="true">Guadalupe House</td>
+                                    <td class="pt-3-half" contenteditable="true">26</td>
+                                    <td>
+                                    <span class="table-remove"><button type="button"
+                                        class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col no-gutters">
+                <div class="ladoParticipantes">
+                    <div class="card">
+                            <h5 class="card-header text-center font-weight-bold py-4">Participantes</h5>
+                            <div class="card-body">
+                                <div id="table" class="table-editable">
+                                <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                                        class="fa fa-plus icon fa-2x" aria-hidden="true"></i></a></span>
+                                <table class="table table-bordered table-responsive-md table-striped text-center">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">Nome</th>
+                                        <th class="text-center">Texto</th>
+                                        <th class="text-center">Num</th>
+                                        <th class="text-center">Remove</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                        <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                        <td class="pt-3-half" contenteditable="true">30</td>
+                                        <td>
+                                        <span class="table-remove"><button type="button"
+                                            class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                                        </td>
+                                    </tr>
+                                    <!-- This is our clonable table line -->
+                                    <tr>
+                                        <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                        <td class="pt-3-half" contenteditable="true">Guerra Cortez</td>
+                                        <td class="pt-3-half" contenteditable="true">45</td>
+                                        <td>
+                                        <span class="table-remove"><button type="button"
+                                            class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                                        </td>
+                                    </tr>
+                                    <!-- This is our clonable table line -->
+                                    <tr>
+                                        <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+                                        <td class="pt-3-half" contenteditable="true">Guadalupe House</td>
+                                        <td class="pt-3-half" contenteditable="true">26</td>
+                                        <td>
+                                        <span class="table-remove"><button type="button"
+                                            class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                            </div>
+
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    </div>         
+  </body>
+</html>

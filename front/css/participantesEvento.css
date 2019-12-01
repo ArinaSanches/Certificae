@@ -80,6 +80,13 @@ body, html {
   font-size: 0.65rem;
   display: block;
   }
+
+  #content-wrapper{
+    float : left;
+    margin-top: 75px;
+    margin-left: 90px;
+    /*background-color: red;*/
+    }
   
   
   
@@ -95,7 +102,6 @@ body, html {
   }
   .sidebar .nav-item .nav-link {
     display: block;
-    width: 100%;
     text-align: left;
     padding: 1rem;
     width: 180px;
@@ -104,71 +110,48 @@ body, html {
     font-size: 1rem;
     display: inline;
   }
-  
-  }
-  
+
   #content-wrapper{
-  float : left;
-  margin-top: 5%;
-  margin-left: 90px;
-  width: 100%;
-  }
-  
-  .card-header{
-  text-align: center;
-  }
-  
-  .container-fluid  {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  margin-left: 10%;
-  margin-top: 3%;
-  color: azure;
-  }
-  
-  h5 {
-  font-size: 60px;
-  }
-  
-  
-  .form-group {
-    position: relative;
-    margin-bottom: 1rem;
-  }
-  
-  .form-group>input{
-    padding: 1.5%;
-    height: auto;
-    border-radius: 2rem;
-  }
+    float : left;
+    margin-top: 75px;
+    margin-left: 180px;
+    /*background-color: red;*/
+    width: 80%;
+    } 
+  }   
   
   .heading {
     font-weight: 300;
   }
 
-  #botao {
-    float: right;
-    color: azure;
-    border-radius: 2rem;
-    font-size: 0.9rem;
-    letter-spacing: 0.05rem;
-    padding: 0.75rem 1rem;
-    border-radius: 2rem;
-    margin-left: 2%;
+  .ladoTexto, .ladoParticipantes{
+      height: 100vh;
+      width: 95%;
   }
 
-  input[type="date"]:before {
-  content: attr(placeholder) !important;
-  margin-right: 0.5em;
-  }
-  input[type="date"]:focus:before,
-  input[type="date"]:valid:before {
-  content: "";
-  }
+.pt-3-half {
+    padding-top: 1.4rem;
+}
 
-  
+#container{
+    text-align: center;
+    margin-top: 5% ;
+    margin-left: 11%;
+}
 
+td{
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#table{
+    table-layout: fixed;
+    width: 100%;
+}
+
+.card{
+    margin-top: 8%;
+}
 
 
   

@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../css/editarEvento.css">
+    <link rel="stylesheet" href="../css/painelEntidade.css">
     <script src="../js/editarEvento.js"></script>
   </head>
   <body>
@@ -82,62 +82,92 @@
 
     <div id="content-wrapper">
     <div class="container-fluid" id="conteudo">
-        <div class="row no-gutter">
-            <div class="col-md-10 col-lg-10">
-              <div class="login d-flex align-items-center py-5">
-                <div class="container row">
-                  <!-- <div class="row"> -->
-                    <div class="col-md-10 col-lg-10 mx-auto">
-                      <h3 class="heading mb-8">Gerenciar informações evento!</h3>
-                      <br><br>
-                      <form>
-                        
-                        <div class="row">
-                            <div class="input-group form-group col">
-                                <div class="input-group-append bg-white ">
-                                    <span class="input-group-text bg-transparent border-right-0"><i class="fa fa-user icon"></i></span>
-                                  </div>
-                                <input type="text" id="inputNome" class="form-control" placeholder="Nome" required autofocus>
-                              </div>
-                        </div>
-                                                  
-                        <div class="row">
 
-                          <div class="input-group form-group col">
-                              <div class="input-group-prepend bg-white">
-                                <span class="input-group-text bg-transparent border-right-0"><i class="fa fa-calendar icon"></i></span>
-                              </div>
-                              <input type="date" class="form-control" placeholder="Data inicio" required autofocus>
-                          </div> 
-                          <div class="input-group form-group col">
-                              <div class="input-group-prepend bg-white">
-                                  <span class="input-group-text bg-transparent border-right-0"><i class="fa fa-calendar icon"></i></span>
-                                </div>
-                              <input type="date" class="form-control"placeholder="Data Fim" required autofocus>
-                          </div> 
-  
+        <div class="row">
+            <div class="column">
+                <div class="card" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                        <img src="../img/certificate.png" id ="imagemCard" class="card-img" alt="...">
                         </div>
-                          
-                        <div class="row">
-                            <div class="input-group form-group col">
-                                <textarea class="form-control" rows="4" id="comment" placeholder="Descrição"></textarea>
-       
-                            </div> 
-                            <div class="input-group form-group col">
-                                <textarea class="form-control" rows="4" id="comment" placeholder="Texto certificado"></textarea>
-                            </div> 
-                        </div>        
-                        
-                        <button class="btn btn-lg  text-uppercase font-weight-bold mb-1 btn-danger" type="submit" id="botao"><i class="fa fa-trash"></i> Excluir</button>
-                        <button class="btn btn-lg  text-uppercase font-weight-bold mb-1 btn-success" type="submit" id="botao"><i class="fa fa-check"></i> Salvar</button>
-
-                      </form>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento super massa</h5>
+                            <p class="card-text">12/05/2019 - 12/05/2019</p>
+                            <button class="btn btn-lg  text-uppercase font-weight-bold mb-1" type="submit" id="botao"><i class="fa fa-pencil"></i></button>
+                        </div>
+                        </div>
                     </div>
                 </div>
-              </div>
             </div>
-          </div>
-      
+            <div class="column">
+                <div class="card" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                        <img src="../img/logo.jpg"  id ="imagemCard" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento massa</h5>
+                            <p class="card-text">12/05/2019 - 12/05/2019</p>
+                            <button class="btn btn-lg  text-uppercase font-weight-bold mb-1" type="submit" id="botao"><i class="fa fa-pencil"></i></button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                        <img src="../img/logo.jpg"  id ="imagemCard" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Evento massa</h5>
+                            <p class="card-text">12/05/2019 - 12/05/2019</p>
+                            <button class="btn btn-lg  text-uppercase font-weight-bold mb-1" type="submit" id="botao"><i class="fa fa-pencil"></i></button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="column">
+                    <div class="card" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                            <img src="../img/certificate.png" id ="imagemCard" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Evento super massa</h5>
+                                <p class="card-text">12/05/2019 - 12/05/2019</p>
+                                <button class="btn btn-lg  text-uppercase font-weight-bold mb-1" type="submit" id="botao"><i class="fa fa-pencil"></i></button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                            <img src="../img/logo.jpg"  id ="imagemCard" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Evento massa</h5>
+                                <p class="card-text">12/05/2019 - 12/05/2019</p>
+                                <button class="btn btn-lg  text-uppercase font-weight-bold mb-1" type="submit" id="botao"><i class="fa fa-pencil"></i></button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+            </div>                      
       </div>
     </div>
          

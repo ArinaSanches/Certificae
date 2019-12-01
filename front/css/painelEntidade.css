@@ -21,7 +21,6 @@ body, html {
     background-size: cover;
     background-image: url('../img/background.jpg');
     overflow-x: hidden;
-  
     
   }
   
@@ -119,16 +118,11 @@ body, html {
   }
   
   .container-fluid  {
-  position: fixed;
   height: 100%;
   width: 100%;
-  margin-left: 10%;
-  margin-top: 3%;
-  color: azure;
-  }
-  
-  h5 {
-  font-size: 60px;
+  margin-left: 12%;
+  margin-top: 5%;
+
   }
   
   
@@ -146,18 +140,18 @@ body, html {
   .heading {
     font-weight: 300;
   }
-
+  
   #botao {
-    float: right;
+    background-color: #F79E8B;
     color: azure;
     border-radius: 2rem;
     font-size: 0.9rem;
     letter-spacing: 0.05rem;
     padding: 0.75rem 1rem;
     border-radius: 2rem;
-    margin-left: 2%;
+    float: right;
   }
-
+  
   input[type="date"]:before {
   content: attr(placeholder) !important;
   margin-right: 0.5em;
@@ -167,13 +161,47 @@ body, html {
   content: "";
   }
 
-  
-
-
 
   
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+    display: flex;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {
+      margin: 0 -5px;
+      display: flex;
+      margin-bottom: 1%;
+   }
   
   
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    flex: 1;
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  
+  /*
+  #imagemCard{*/
+    /*margin-right: 5%;
+    width: 100px;
+    height: 100px;*/
+   /* padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    
+    border-radius: 50%;
+    }
+  */
   
   
   
