@@ -22,7 +22,7 @@ const EventoSchema = new mongoose.Schema({
         required: true,
     },
     id_entidade: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Entidade',
         required: true,
     },

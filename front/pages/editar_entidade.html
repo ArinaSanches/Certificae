@@ -13,10 +13,135 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../css/painelEntidade.css">
-    <script src="../js/editarEvento.js"></script>
+    
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/editar_entidade.css">
+    <script src="../js/editar_entidade.js"></script>
 </head>
 <body>
-    TESTE
+    <nav class="navbar fixed-header navbar-light bg-light navbar-expand-lg">
+        <a class="navbar-brand" href="#">Certificaê</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> 
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-2">
+            <li class="nav-item active">
+              <a class="nav-link" href="../index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/sobre.html">SOBRE</a>
+            </li>
+          </ul>
+          
+          <form class="form-inline my-2 my-lg-2">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar entidade">
+            <button class="btn rounded-circle" type="submit"><img src="../img/search.png" class="icons"/></button>
+          </form>
+
+          <ul class="navbar-nav my-2 my-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#">PERFIL</a>
+            </li>
+          </ul>
+
+        </div>
+    </nav>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav navbar-light bg-light  ">
+        <li class="nav-header"><img src="../img/logo.jpg" id = "logo"></li>
+
+        <li class="nav-item" id="nomeEntidade">
+            <p >Computacao</p>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link" href="../pages/editar_entidade.html">
+            <i class="fa fa-edit fa-fw"></i>
+            <span>Editar</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+            <i class="fa fa-table fa-fw"></i>
+            <span>Listar eventos</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../pages/cadastroEvento.html">
+            <i class="fa fa-plus fa-fw"></i>
+            <span>Add eventos</span></a>
+        </li>
+
+        </ul>
+    </div>
+
+    <div id="content-wrapper">
+    <div class="container-fluid" id="conteudo">
+        <div class="row no-gutter">
+            <div class="col-md-10 col-lg-10">
+              <div class="login d-flex align-items-center py-5">
+                <div class="container row">
+                  <!-- <div class="row"> -->
+                    <div class="col-md-10 col-lg-10 mx-auto">
+                      <h1 class="heading mb-8">Editar Entidade</h1>
+                      <br><br>
+                      <form>
+                        
+                        <div class="row">
+                            <div class="input-group form-group col">
+                                <div class="input-group-append bg-white ">
+                                    <span class="input-group-text bg-transparent border-right-0"><i class="fa fa-user icon"></i></span>
+                                  </div>
+                                <input type="text" id="nome" class="form-control" placeholder="Nome" required autofocus>
+                              </div>
+                        </div>
+                                                  
+                        <div class="row">
+
+                          <div class="input-group form-group col">
+                              <div class="input-group-prepend bg-white">
+                                <span class="input-group-text bg-transparent border-right-0">@</span>
+                              </div>
+                              <input type="text" id="email" class="form-control" placeholder="Email" required autofocus>
+                          </div> 
+                          <div class="input-group form-group col">
+                              <div class="input-group-prepend bg-white">
+                                  <span class="input-group-text bg-transparent border-right-0"><i class="fa fa-lock icon"></i></span>
+                                </div>
+                                <input type="text" id="email" class="form-control" placeholder="Senha" required autofocus>
+                          </div> 
+  
+                        </div>
+                          
+                        <div class="row">
+                            <div class="input-group form-group col">
+                                <textarea class="form-control" rows="4" id="comment" placeholder="Descrição"></textarea>
+       
+                            </div> 
+                            <div class="input-group form-group col">
+                                <!-- UPLOAD -->
+                                    <input type="text" id="email" class="form-control" placeholder="Senha" required autofocus>
+                            </div> 
+                        </div>        
+                        
+                        <button class="btn btn-lg  text-uppercase font-weight-bold mb-1 btn-danger" type="submit" id="salvar"><i class="fa fa-trash"></i> Excluir</button>
+                        <button class="btn btn-lg  text-uppercase font-weight-bold mb-1 btn-success" type="submit" id="remover"><i class="fa fa-check"></i> Salvar</button>
+
+                      </form>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+      </div>
+    </div>
+
+
+
 </body>
 </html>

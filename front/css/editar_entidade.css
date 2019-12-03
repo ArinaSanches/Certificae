@@ -1,0 +1,40 @@
+.container-fluid  {
+    position: fixed;
+    margin-left: 7%;
+    margin-top: 4%;
+    color: azure;
+    height: 100%;
+    width: 100%;
+    }
+  
+  h5 {
+  font-size: 60px;
+  }
+  
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group>input{
+    padding: 1.5%;
+    height: auto;
+    border-radius: 2rem;
+  }
+  
+  .heading {
+    font-weight: 300;
+  }
+
+  button {
+    float: right;
+    color: azure;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+    border-radius: 2rem;
+    margin-left: 2%;
+  }
+
