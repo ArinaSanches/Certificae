@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Entidade = mongoose.model('Entidade');
+const jwt = require('jsonwebtoken');
+const authConfig = require('../config/auth');
 
 module.exports = {
     async index(req, res) {
@@ -9,8 +11,15 @@ module.exports = {
     },
 
     async store(req, res) {
+        // console.log("AAAAAA");
+        // console.log(req.body);
         const entidade = await Entidade.create(req.body);
-        return res.json(entidade);
+
+        const token = jwt.sign({id: entidade._id}, authConfig.secret, {
+            expiresIn: 86400,
+        });
+
+        res.send({entidade, token});
     },
 
     async show(req, res) {
@@ -27,4 +36,24 @@ module.exports = {
         await Entidade.findByIdAndRemove(req.params.id);
         return res.status(200).send("ok");
     },
+
+    async authenticate(req, res) {
+        const {login, password} = req.body;
+
+        const entidade = await Entidade.findOne({login});
+
+        if(!entidade)
+            return res.status(400).send({'error': 'User not found'});
+        
+        if(!(password == entidade.password))
+            return res.status(400).send({'error': 'Invalid password'});
+
+        entidade.password = undefined;
+
+        const token = jwt.sign({id: entidade._id}, authConfig.secret, {
+            expiresIn: 86400,
+        });
+
+        res.send({entidade, token});
+    }   
 };
