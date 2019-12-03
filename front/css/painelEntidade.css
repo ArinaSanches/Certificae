@@ -1,0 +1,217 @@
+body, html {
+    height: 100%;
+  }
+  
+  img, embed, object, video {
+    max-width: 100%;
+  }
+  
+  .icons{
+    width: 30px;
+    height: 30px;
+  }
+  
+  body {
+    /* Full height */
+    height: 100%;
+    position: relative;
+    /* Center and scale the image nicely */
+    background-position: center;
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    background-image: url('../img/background.jpg');
+    overflow-x: hidden;
+    
+  }
+  
+  .fixed-header{
+  position: fixed;
+  top : 0;
+  width: 100%;
+  height: 75px;
+  z-index: 1;
+  }
+  
+  /*.nav-header{
+  padding: 25%;
+  }*/
+  
+  #logo{
+  /*margin-right: 5%;
+  width: 100px;
+  height: 100px;*/
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  
+  border-radius: 50%;
+  }
+  
+  #nomeEntidade{
+  text-align: center;
+  font-size: 0.65rem;
+  word-wrap: break-word;
+  padding-right: 5%;
+  padding-left: 5%;
+  }
+  
+  .sidebar {
+  position: fixed;
+  margin-top: 75px;
+  width: 90px !important;
+  min-height: calc(100vh - 56px);
+  z-index: 1;
+  }
+  
+  .sidebar .nav-item:last-child {
+  margin-bottom: 1rem;
+  }
+  
+  .sidebar .nav-item .nav-link {
+  text-align: center;
+  padding: 0.75rem 1rem;
+  width: 90px;
+  }
+  
+  
+  .sidebar .nav-item .nav-link span {
+  font-size: 0.65rem;
+  display: block;
+  }
+
+  #content-wrapper{
+    float : left;
+    margin-top: 75px;
+    margin-left: 90px;
+    width: 100%;
+
+    }
+  
+  
+  
+  @media (min-width: 768px) {
+  #nomeEntidade{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 10%;
+  }
+  
+  .sidebar {
+    width: 180px !important;
+  }
+  .sidebar .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    width: 180px;
+  }
+  .sidebar .nav-item .nav-link span {
+    font-size: 1rem;
+    display: inline;
+  }
+
+  #content-wrapper{
+    float : left;
+    margin-top: 75px;
+    margin-left: 180px;
+    width: 100%;
+    }
+  
+  }  
+   
+  .card-header{
+  text-align: center;
+  }
+  
+  .container-fluid  {
+  width: 100%;
+  margin-left: 7%;
+  margin-top: 5%;
+
+  }
+  
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group>input{
+    padding: 1.5%;
+    height: auto;
+    border-radius: 2rem;
+  }
+  
+  .heading {
+    font-weight: 300;
+  }
+  
+  #botao {
+    background-color: #F79E8B;
+    color: azure;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+    border-radius: 2rem;
+    float: right;
+  }
+  
+  input[type="date"]:before {
+  content: attr(placeholder) !important;
+  margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before {
+  content: "";
+  }
+
+
+  
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+    display: flex;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {
+      margin: 0 -5px;
+      display: flex;
+      margin-bottom: 1%;
+   }
+  
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    flex: 1;
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  
+  /*
+  #imagemCard{*/
+    /*margin-right: 5%;
+    width: 100px;
+    height: 100px;*/
+   /* padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    
+    border-radius: 50%;
+    }
+  */
+  
+  
+  
+  
+  
+  

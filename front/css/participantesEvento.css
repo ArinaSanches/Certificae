@@ -1,0 +1,181 @@
+body, html {
+    height: 100%;
+  }
+  
+  img, embed, object, video {
+    max-width: 100%;
+  }
+  
+  .icons{
+    width: 30px;
+    height: 30px;
+  }
+  
+  body {
+    /* Full height */
+    height: 100%;
+    position: relative;
+    /* Center and scale the image nicely */
+    background-position: center;
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    background-image: url('../img/background.jpg');
+    overflow-x: hidden;
+  
+    
+  }
+  
+  .fixed-header{
+  position: fixed;
+  top : 0;
+  width: 100%;
+  height: 75px;
+  z-index: 1;
+  }
+  
+  /*.nav-header{
+  padding: 25%;
+  }*/
+  
+  #logo{
+  /*margin-right: 5%;
+  width: 100px;
+  height: 100px;*/
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  
+  border-radius: 50%;
+  }
+  
+  #nomeEntidade{
+  text-align: center;
+  font-size: 0.65rem;
+  word-wrap: break-word;
+  padding-right: 5%;
+  padding-left: 5%;
+  }
+  
+  .sidebar {
+  position: fixed;
+  margin-top: 75px;
+  width: 90px !important;
+  min-height: calc(100vh - 56px);
+  z-index: 1;
+  }
+  
+  .sidebar .nav-item:last-child {
+  margin-bottom: 1rem;
+  }
+  
+  .sidebar .nav-item .nav-link {
+  text-align: center;
+  padding: 0.75rem 1rem;
+  width: 90px;
+  }
+  
+  
+  .sidebar .nav-item .nav-link span {
+  font-size: 0.65rem;
+  display: block;
+  }
+
+  #content-wrapper{
+    float : left;
+    margin-top: 75px;
+    margin-left: 90px;
+    /*background-color: red;*/
+    }
+  
+  
+  
+  @media (min-width: 768px) {
+  #nomeEntidade{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 10%;
+  }
+  
+  .sidebar {
+    width: 180px !important;
+  }
+  .sidebar .nav-item .nav-link {
+    display: block;
+    text-align: left;
+    padding: 1rem;
+    width: 180px;
+  }
+  .sidebar .nav-item .nav-link span {
+    font-size: 1rem;
+    display: inline;
+  }
+
+  #content-wrapper{
+    float : left;
+    margin-top: 75px;
+    margin-left: 180px;
+    /*background-color: red;*/
+    width: 80%;
+    } 
+
+    #nomeEvento{
+      color: azure;
+      margin-left: 43%;
+    }
+
+    
+  }   
+  
+  .heading {
+    font-weight: 300;
+  }
+
+  .ladoTexto, .ladoParticipantes{
+      height: 100vh;
+      width: 95%;
+  }
+
+.pt-3-half {
+    padding-top: 1.4rem;
+}
+
+#container{
+    margin-top: 5% ;
+    margin-left: 12%;
+    
+}
+
+td{
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#table{
+    table-layout: fixed;
+    width: 100%;
+}
+
+.card{
+    margin-top: 8%;
+}
+
+
+
+
+#addCsv{
+  float: left;
+}
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
