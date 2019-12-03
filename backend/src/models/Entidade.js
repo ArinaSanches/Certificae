@@ -4,6 +4,7 @@ const EntidadeSchema = new mongoose.Schema({
     login: {
         type: String,
         required: true,
+        lowercase: true
     },
     password: {
         type: String,

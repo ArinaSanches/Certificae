@@ -21,12 +21,10 @@ function cadastrar_entidade(e){
             },
             success: function(msg) {
                 console.log(msg);
-                // console.log("DEU BOM");
                 window.location.href = '../pages/painelEntidade.html';
             }
         });
-
-        
-
-    } else  console.log("OLA!!!");
+    } else {
+        alert("Campos inválidos!");
+    };
 };

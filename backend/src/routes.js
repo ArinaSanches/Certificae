@@ -7,6 +7,8 @@ const ParticipacaoController = require('./controllers/ParticipacaoController');
 const TextoController = require('./controllers/TextoController');
 const CertificadoController = require('./controllers/CertificadoController');
 
+routes.post('/authenticate', EntidadeController.authenticate);
+
 routes.get('/entidade', EntidadeController.index);
 routes.post('/entidade', EntidadeController.store);
 routes.get('/entidade/:id', EntidadeController.show);
