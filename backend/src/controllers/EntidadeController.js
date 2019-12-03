@@ -9,6 +9,8 @@ module.exports = {
     },
 
     async store(req, res) {
+        console.log("AAAAAA");
+        console.log(req.body);
         const entidade = await Entidade.create(req.body);
         return res.json(entidade);
     },
