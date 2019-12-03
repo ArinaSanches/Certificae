@@ -1,27 +1,30 @@
+//TODO: Pegar as info da entidade e povoar
 function editar_entidade(e){
     e.preventDefault();
     if(document.getElementById('formulario').checkValidity()){
         var nome = document.getElementById('inputNome').value;
         var email = document.getElementById('inputEmail').value;
-        var descricao = document.getElementById('inputDescricao').value;
+        var descricao = document.getElementById('descricao').value;
         var senha = document.getElementById('inputPassword').value;
+        
         var send_data = {"nome": nome, "login": email, "descricao": descricao, "password": senha, "foto": "aaaa"};
-        // console.log(send_data);
+        
+        const token = sessionStorage.getItem('token');
+        const id = sessionStorage.getItem('id_entidade');
 
         $.ajax({
             headers: { "Accept": "application/json" },
-            type: "POST",
+            type: "PUT",
             crossDomain: true,
-            url: "http://localhost:3001/api/entidade",
+            url: "http://localhost:3004/api/entidade/"+id,
             contentType: 'application/json',
             dataType: 'json',
             data: JSON.stringify(send_data),
             beforeSend: function(xhr) {
                 xhr.withCredentials = true;
+                xhr.setRequestHeader('Authorization','Bearer ' + token);
             },
             success: function(msg) {
-                sessionStorage.setItem('token', msg.token);
-                sessionStorage.setItem('id_entidade', msg.entidade._id);
                 window.location.href = '../pages/painelEntidade.html';
             }
         });
@@ -33,26 +36,24 @@ function editar_entidade(e){
 
 
 function excluir_entidade(e){
-    e.preventDefault();
-    const token = sessionStorage.setItem('token');
-    const id = sessionStorage.setItem('id_entidade');
+    console.log("ENTERI AQUI")
+    // e.preventDefault();
+    const token = sessionStorage.getItem('token');
+    const id = sessionStorage.getItem('id_entidade');
 
         $.ajax({
             headers: { "Accept": "application/json" },
             type: "DELETE",
             crossDomain: true,
-            url: "http://localhost:3001/api/entidade",
+            url: "http://localhost:3004/api/entidade/"+id,
             contentType: 'application/json',
             dataType: 'json',
-            data: JSON.stringify(send_data),
             beforeSend: function(xhr) {
                 xhr.withCredentials = true;
+                xhr.setRequestHeader('Authorization','Bearer ' + token);
             },
             success: function(msg) {
-                sessionStorage.setItem('token', msg.token);
-                sessionStorage.setItem('id_entidade', msg.entidade._id);
                 window.location.href = '../pages/painelEntidade.html';
             }
         });
     } 
-};
