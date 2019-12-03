@@ -7,32 +7,27 @@ const EventoSchema = new mongoose.Schema({
     },
     descricao: {
         type: String,
-        required: true,
+        required: false,
     },
-    data: {
+    dataInicio: {
         type: Date,
         required: true,
     },
-    url: {
-        type: String,
-        required: true,
-    },
-    texto: {
-        type: String,
+    dataFim: {
+        type: Date,
         required: true,
     },
     id_entidade: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Entidade',
-        required: true,
     },
     foto: {
         type: String,
-        required: true,
+        required: false,
     },
     background: {
         type: String,
-        required: true,
+        required: false,
     },
     createdAt: {
         type: Date,
