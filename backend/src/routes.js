@@ -7,11 +7,19 @@ const ParticipacaoController = require('./controllers/ParticipacaoController');
 const TextoController = require('./controllers/TextoController');
 const CertificadoController = require('./controllers/CertificadoController');
 
+const authMiddleware = require('./middlewares/auth');
+// routes.use(authMiddleware);
+
 routes.post('/authenticate', EntidadeController.authenticate);
 
 routes.get('/entidade', EntidadeController.index);
 routes.post('/entidade', EntidadeController.store);
 routes.get('/entidade/:id', EntidadeController.show);
+
+routes.get('/certificados', CertificadoController.index);
+
+routes.use(authMiddleware);
+
 routes.put('/entidade/:id', EntidadeController.update);
 routes.delete('/entidade/:id', EntidadeController.destroy);
 
@@ -33,7 +41,5 @@ routes.post('/texto', TextoController.store);
 routes.get('/texto/:id', TextoController.show);
 routes.put('/texto/:id', TextoController.update);
 routes.delete('/texto/:id', TextoController.destroy);
-
-routes.get('/certificados', CertificadoController.index);
 
 module.exports = routes;
