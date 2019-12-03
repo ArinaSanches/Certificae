@@ -20,7 +20,8 @@ function cadastrar_entidade(e){
                 xhr.withCredentials = true;
             },
             success: function(msg) {
-                console.log(msg);
+                sessionStorage.setItem('token', msg.token);
+                sessionStorage.setItem('id_entidade', msg.entidade._id);
                 window.location.href = '../pages/painelEntidade.html';
             }
         });

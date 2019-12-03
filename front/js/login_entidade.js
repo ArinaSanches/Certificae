@@ -10,7 +10,7 @@ function login(e){
             headers: { "Accept": "application/json" },
             type: "POST",
             crossDomain: true,
-            url: "http://localhost:3001/api/authenticate",
+            url: "http://localhost:3004/api/authenticate",
             contentType: 'application/json',
             dataType: 'json',
             data: JSON.stringify(send_data),
@@ -19,7 +19,10 @@ function login(e){
             },
             success: function(msg) {
                 console.log(msg);
-                // window.location.href = '../pages/painelEntidade.html';
+                console.log(msg.token);
+                sessionStorage.setItem('token', msg.token);
+                sessionStorage.setItem('id_entidade', msg.entidade._id);
+                window.location.href = '../pages/painelEntidade.html';
             }
         });
     } else {
