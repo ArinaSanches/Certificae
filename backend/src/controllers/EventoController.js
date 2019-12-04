@@ -9,11 +9,9 @@ module.exports = {
     },
 
     async store(req, res) {
-        console.log(req.body);
-        console.log(req.file)
         dadosEvento = req.body
-        dadosEvento['foto'] = req.file['filename'] 
-        //dadosEvento['background'] = req.file2['filename'] 
+        dadosEvento['foto'] = req.files[0]['filename'] 
+        dadosEvento['background'] = req.files[1]['filename'] 
         const evento = await Evento.create(dadosEvento);
         return res.json(evento);
     },

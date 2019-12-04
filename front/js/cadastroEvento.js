@@ -6,21 +6,28 @@ function cadastrarEvento(e){
         var dataFim = document.getElementById('inputDataFim').value;
         var descricao = document.getElementById('inputDescricao').value;
         var file = document.getElementById("inputFoto").value;
-        var send_data = {"nome": nome, "descricao": descricao, "dataInicio": dataInicio, "dataFim": dataFim, "file": file };
+        //var send_data = {"nome": nome, "descricao": descricao, "dataInicio": dataInicio, "dataFim": dataFim, "file": file };
+        var formData = new FormData();
+        formData.append("nome", nome);
+        formData.append("dataFim", dataFim);
+        formData.append("dataInicio",dataInicio);
+        formData.append("descricao",descricao);
+        formData.append('file', $('#inputFoto')[0].files[0]);
+        formData.append('file', $('#inputBackground')[0].files[0]);
+
         $.ajax({
             headers: { "Accept": "application/json" },
             type: "POST",
             crossDomain: true,
             url: "http://localhost:3001/api/evento",
-            contentType: 'application/json',
-            dataType: 'json',
-            data: JSON.stringify(send_data),
+            processData: false,
+            contentType: false,
+            data: formData,
             beforeSend: function(xhr) {
                 xhr.withCredentials = true;
             },
             success: function(msg) {
                 console.log(msg);
-                window.location.href = '../pages/painelEntidade.html';
             }
         });       
     } else  console.log("OLA!!!");
