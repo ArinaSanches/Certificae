@@ -128,16 +128,21 @@
                                 <textarea class="form-control" rows="4" id="descricao" placeholder="Descrição"></textarea>
        
                             </div> 
-                            <!-- <div class="input-group form-group col">
-                                 UPLOAD
-                                    <input type="text" id="email" class="form-control" placeholder="Senha" required autofocus>
-                            </div>  -->
-                        </div>        
+                            
+                        </div>     
                         
-                        <button class="btn btn-lg  text-uppercase font-weight-bold mb-1 btn-danger" type="submit" id="remover" onclick="excluir_entidade(event)"><i class="fa fa-trash"></i> Excluir</button>
+                        <div class="row">
+                          <label id ="labelImg" for="avatar">Escolha o avatar da entidade:     </label>
+                        
+                          <input type="file" id="inputFoto" name="avatar">
+                        </div>
+                        
+                        
                         <button class="btn btn-lg  text-uppercase font-weight-bold mb-1 btn-success" id="salvar" onclick="editar_entidade(event)"><i class="fa fa-check"></i> Salvar</button>
+                        
 
                       </form>
+                      <button class="btn btn-lg  text-uppercase font-weight-bold mb-1 btn-danger" id="remover" onclick="excluir_entidade(event)"><i class="fa fa-trash"></i> Excluir</button>
                     </div>
                 </div>
               </div>

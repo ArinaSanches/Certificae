@@ -11,8 +11,6 @@ module.exports = {
     },
 
     async store(req, res) {
-        // console.log("AAAAAA");
-        // console.log(req.body);
         var entidade = req.body;
         entidade['foto'] = req.file['filename'];
         entidade = await Entidade.create(entidade);
@@ -41,6 +39,8 @@ module.exports = {
 
     async destroy(req, res) {
         await Entidade.findByIdAndRemove(req.params.id);
+        console.log("AAAAAA");
+        console.log(req);
         return res.status(200).send("ok");
     },
 
