@@ -86,6 +86,10 @@ function registrarParticipacao(){
     });    
 }
 
+function eliminarParticipacao(){
+    $(this).parents('tr').detach();
+}
+
 
 $('#adicionarTexto').on('click', 'i', () => {
     $('#tabelaTexto').append(newTr);   
@@ -100,6 +104,8 @@ $tableID.on('click', '.btn-success', registrarTexto);
 $tableID.on('click', '.btn-danger', eliminarTexto);
 
 $tableParticipacaoID.on('click', '#botaoCadastrar', registrarParticipacao);
+
+$tableParticipacaoID.on('click', '.btn-danger', eliminarParticipacao);
 
 
 
