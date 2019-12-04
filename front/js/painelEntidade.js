@@ -5,7 +5,7 @@ function get_eventos(){
             headers: { "Accept": "application/json" },
             type: "GET",
             crossDomain: true,
-            url: "http://localhost:3004/api/evento",
+            url: "http://localhost:3004/api/evento?id_entidade="+ sessionStorage.getItem('id_entidade') ,
             contentType: 'application/json',
             dataType: 'json',
             beforeSend: function(xhr) {
@@ -48,7 +48,7 @@ function gerar_componente_device(evento, id_linha) {
                 "</div>" +
                 "<div class='col-md-8'>" +
                 "<div class='card-body'>" +
-                    "<h5 class='card-title'>" + evento["nome"] + "</h5>" +
+                    "<h4 class='card-title'>" + evento["nome"] + "</h4>" +
                     "<p class='card-text'>" + dataInicio + " - " + dataFim +"</p>" +
                     "<a href='../pages/editarEvento.html'><button class='btn btn-lg  text-uppercase font-weight-bold mb-1' type='submit' id='botao'><i class='fa fa-pencil'></i></button></a>"+
                 "</div>" +

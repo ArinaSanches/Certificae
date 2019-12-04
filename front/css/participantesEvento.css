@@ -17,7 +17,7 @@ body, html {
     position: relative;
     /* Center and scale the image nicely */
     background-position: center;
-    /*background-repeat: no-repeat;*/
+    background-repeat: repeat;
     background-size: cover;
     background-image: url('../img/background.jpg');
     overflow-x: hidden;

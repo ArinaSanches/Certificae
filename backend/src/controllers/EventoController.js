@@ -6,7 +6,7 @@ module.exports = {
 
     async index(req, res) {
         const { page = 1 } = req.query;
-        const eventos = await Evento.paginate({}, { page, limit: 10 });
+        const eventos = await Evento.paginate({"id_entidade":req.query.id_entidade}, { page, limit: 10 });
         return res.json(eventos);
     },
 
