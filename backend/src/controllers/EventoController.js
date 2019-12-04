@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const Evento = mongoose.model('Evento');
 
 module.exports = {
+
+
     async index(req, res) {
         const { page = 1 } = req.query;
         const eventos = await Evento.paginate({}, { page, limit: 10 });
