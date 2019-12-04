@@ -30,6 +30,7 @@ function cadastrarEvento(e){
             },
             success: function(msg) {
                 console.log(msg);
+                window.location.href = '../pages/painelEntidade.html';
             }
         });       
     } else  console.log("OLA!!!");

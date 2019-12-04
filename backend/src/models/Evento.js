@@ -20,14 +20,15 @@ const EventoSchema = new mongoose.Schema({
     id_entidade: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Entidade',
+        required: true,
     },
     foto: {
         type: String,
-        required: false,
+        required: true,
     },
     background: {
         type: String,
-        required: false,
+        required: true,
     },
     createdAt: {
         type: Date,
