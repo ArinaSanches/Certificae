@@ -15,14 +15,14 @@ const authMiddleware = require('./middlewares/auth');
 routes.post('/authenticate', EntidadeController.authenticate);
 
 routes.get('/entidade', EntidadeController.index);
-routes.post('/entidade', EntidadeController.store);
+routes.post('/entidade', multer(multerConfig).single('file'), EntidadeController.store);
 routes.get('/entidade/:id', EntidadeController.show);
 
 routes.get('/certificados', CertificadoController.index);
 
 routes.use(authMiddleware);
 
-routes.put('/entidade/:id', EntidadeController.update);
+routes.put('/entidade/:id', multer(multerConfig).single('file'), EntidadeController.update);
 routes.delete('/entidade/:id', EntidadeController.destroy);
 
 routes.get('/evento', EventoController.index);
