@@ -12,6 +12,7 @@ function cadastrarEvento(e){
         formData.append("dataFim", dataFim);
         formData.append("dataInicio",dataInicio);
         formData.append("descricao",descricao);
+        formData.append("id_entidade",sessionStorage.getItem('id_entidade'))
         formData.append('file', $('#inputFoto')[0].files[0]);
         formData.append('file', $('#inputBackground')[0].files[0]);
 
@@ -19,12 +20,13 @@ function cadastrarEvento(e){
             headers: { "Accept": "application/json" },
             type: "POST",
             crossDomain: true,
-            url: "http://localhost:3001/api/evento",
+            url: "http://localhost:3004/api/evento",
             processData: false,
             contentType: false,
             data: formData,
             beforeSend: function(xhr) {
                 xhr.withCredentials = true;
+                xhr.setRequestHeader('Authorization','Bearer ' + sessionStorage.getItem('token'));
             },
             success: function(msg) {
                 console.log(msg);
@@ -35,5 +37,8 @@ function cadastrarEvento(e){
 
 var cadastrar = document.getElementById('botaoCadastrar');
 cadastrar.onclick = cadastrarEvento;
+
+
+
 
 

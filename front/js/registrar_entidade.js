@@ -12,7 +12,7 @@ function cadastrar_entidade(e){
             headers: { "Accept": "application/json" },
             type: "POST",
             crossDomain: true,
-            url: "http://localhost:3001/api/entidade",
+            url: "http://localhost:3004/api/entidade",
             contentType: 'application/json',
             dataType: 'json',
             data: JSON.stringify(send_data),
