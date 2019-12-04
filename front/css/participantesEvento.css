@@ -161,12 +161,21 @@ td{
 }
 
 
-
-
 #addCsv{
   float: left;
 }
 
+#botaoCadastrar {
+  float: right;
+  color: azure;
+  background-color: #F79E8B;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.50rem 0.70rem;
+  border-radius: 2rem;
+  margin-left: 2%;
+}
 
 
 

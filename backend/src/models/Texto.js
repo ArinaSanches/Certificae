@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate');
+var AutoIncrement = require('mongoose-sequence')(mongoose);
+
 const TextoSchema = new mongoose.Schema({
     id_evento: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Evento',
-        required: true,
     },
     texto: {
         type: String,
@@ -12,7 +13,6 @@ const TextoSchema = new mongoose.Schema({
     },
     numero: {
         type: Number,
-        required: true,
     },
     createdAt: {
         type: Date,
@@ -21,5 +21,9 @@ const TextoSchema = new mongoose.Schema({
 });
 
 TextoSchema.plugin(mongoosePaginate);
+//autoIncrement.initialize('Number');
+//TextoSchema.plugin(autoIncrement.plugin, 'Texto');
+
+TextoSchema.plugin(AutoIncrement, {id:'order_seq',inc_field: 'numero'});
 
 mongoose.model('Texto', TextoSchema);
