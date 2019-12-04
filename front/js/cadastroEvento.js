@@ -5,7 +5,8 @@ function cadastrarEvento(e){
         var dataInicio = document.getElementById('inputDataInicio').value;
         var dataFim = document.getElementById('inputDataFim').value;
         var descricao = document.getElementById('inputDescricao').value;
-        var send_data = {"nome": nome, "descricao": descricao, "dataInicio": dataInicio, "dataFim": dataFim};
+        var file = document.getElementById("inputFoto").value;
+        var send_data = {"nome": nome, "descricao": descricao, "dataInicio": dataInicio, "dataFim": dataFim, "file": file };
         $.ajax({
             headers: { "Accept": "application/json" },
             type: "POST",

@@ -89,7 +89,7 @@
                     <div class="col-md-10 col-lg-10 mx-auto">
                       <h1 class="heading mb-8">Cadastre seu evento no nosso sistema! :)</h1>
                       <br><br>
-                      <form id = "formulario">                        
+                      <form id = "formulario" method="post" enctype="multipart/form-data">                        
                         <div class="row">
                             <div class="input-group form-group col">
                                 <div class="input-group-prepend bg-white">
@@ -120,7 +120,13 @@
                             <div class="input-group form-group col">
                                 <textarea class="form-control" rows="4" id='inputDescricao' placeholder="Descrição"></textarea>
                             </div>               
-                        </div>        
+                        </div>
+                        
+                        <div class="row">
+                          <label id ="labelImg" for="avatar">Choose a profile picture:</label>
+                          <input type="file" id="inputFoto" name="file">
+                        </div>
+
                         <button class="btn btn-lg  text-uppercase font-weight-bold mb-1" type="submit" id="botaoCadastrar">Cadastrar</button>
                       </form>
                     </div>

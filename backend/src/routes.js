@@ -1,5 +1,7 @@
 const express = require('express');
 const routes = express.Router();
+const multer = require('multer');
+const multerConfig = require('./config/multer')
 
 const EntidadeController = require('./controllers/EntidadeController');
 const EventoController = require('./controllers/EventoController');
@@ -14,7 +16,7 @@ routes.put('/entidade/:id', EntidadeController.update);
 routes.delete('/entidade/:id', EntidadeController.destroy);
 
 routes.get('/evento', EventoController.index);
-routes.post('/evento', EventoController.store);
+routes.post('/evento', multer(multerConfig).single('file'), EventoController.store);
 routes.get('/evento/:id', EventoController.show);
 routes.put('/evento/:id', EventoController.update);
 routes.delete('/evento/:id', EventoController.destroy);
