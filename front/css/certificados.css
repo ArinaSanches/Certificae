@@ -1,5 +1,52 @@
+body {
+    /* position: relative; */
+    height: auto;
+    background-repeat: repeat-y;
+}
+
 #conteudo {
     color: azure;
-    margin-top: 8%;
+    margin-top: 6%;
+    padding:5%;
+    /* height: auto;
+    width: auto; */
+    /* margin-left: 10%;
+    margin-right: 15%; */
+}
+
+#filtro{
+    top: 70px;
+}
+
+input[type="date"]:before {
+    content: attr(placeholder) !important;
+    margin-right: 0.5em;
+    }
+    input[type="date"]:focus:before,
+    input[type="date"]:valid:before {
+    content: "";
+    }
+
+
+#checksboxes {
     margin-left: 10%;
 }
+
+#checkboxes .form-check{
+    margin-left: 5%;
+}
+
+#botaoAplicar {
+    float: right;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    color: azure;
+    background-color: #F79E8B;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 3rem;
+    border-radius: 2rem;
+    margin-left: 2%;
+  }
+  
