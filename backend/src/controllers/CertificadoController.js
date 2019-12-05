@@ -8,6 +8,9 @@ module.exports = {
         // checar as querys que pode ser feitas pelos filtros
 
         // 1. pega as participacoes dele pelo cpf
+        const participacoes = await Participacao.find({"cpf": req.params.cpf});
+
+        console.log(participacoes)
         // 2. pega os textos dele em Textos
         // 3. pega os eventos que ele participou em Eventos
 
@@ -15,7 +18,7 @@ module.exports = {
 
 
         const { page = 1 } = req.query;
-        const participacoes = await Participacao.paginate({}, { page, limit: 10 });
+        
         return res.json(participacoes);
     },
 };

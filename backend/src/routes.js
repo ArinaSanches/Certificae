@@ -18,7 +18,7 @@ routes.get('/entidade', EntidadeController.index);
 routes.post('/entidade', multer(multerConfig).single('file'), EntidadeController.store);
 routes.get('/entidade/:id', EntidadeController.show);
 
-routes.get('/certificados', CertificadoController.index);
+routes.get('/certificados/:cpf', CertificadoController.index);
 
 routes.use(authMiddleware);
 
