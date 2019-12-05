@@ -28,7 +28,7 @@ routes.delete('/entidade/:id', EntidadeController.destroy);
 routes.get('/evento', EventoController.index);
 routes.post('/evento', multer(multerConfig).array('file'), EventoController.store);
 routes.get('/evento/:id', EventoController.show);
-routes.put('/evento/:id', EventoController.update);
+routes.put('/evento/:id',multer(multerConfig).array('file'),EventoController.update);
 routes.delete('/evento/:id', EventoController.destroy);
 
 routes.get('/participacao', ParticipacaoController.index);

@@ -24,6 +24,9 @@ module.exports = {
     },
 
     async update(req, res) {
+        dadosEvento = req.body
+        dadosEvento['foto'] = req.files[0]['filename'] 
+        dadosEvento['background'] = req.files[1]['filename'] 
         const evento = await Evento.findByIdAndUpdate(req.params.id, req.body, { new: true });
         return res.json(evento);
     },

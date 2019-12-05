@@ -10,15 +10,15 @@
     <title>Certificaê</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="../js/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e405d5a62d.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/all.css">
 
     <link rel="stylesheet" href="../css/editarEvento.css">
-    <script src="../js/editarEvento.js"></script>
+    <script src="../js/editar_evento.js"></script>
   </head>
   <body>
 
@@ -92,7 +92,7 @@
                     <div class="col-md-10 col-lg-10 mx-auto">
                       <h1 class="heading mb-8">Gerenciar informações evento!</h1>
                       <br><br>
-                      <form>
+                      <form id="formulario">
                         
                         <div class="row">
                             <div class="input-group form-group col">
@@ -109,31 +109,38 @@
                               <div class="input-group-prepend bg-white">
                                 <span class="input-group-text bg-transparent border-right-0"><i class="fa fa-calendar icon"></i></span>
                               </div>
-                              <input type="date" class="form-control" placeholder="Data inicio" required autofocus>
+                              <input type="date" id="inputDataInicio" class="form-control" placeholder="Data inicio" required autofocus>
                           </div> 
                           <div class="input-group form-group col">
                               <div class="input-group-prepend bg-white">
                                   <span class="input-group-text bg-transparent border-right-0"><i class="fa fa-calendar icon"></i></span>
                                 </div>
-                              <input type="date" class="form-control"placeholder="Data Fim" required autofocus>
+                              <input type="date" id="inputdDataFim" class="form-control"placeholder="Data Fim" required autofocus>
                           </div> 
   
                         </div>
                           
                         <div class="row">
                             <div class="input-group form-group col">
-                                <textarea class="form-control" rows="4" id="comment" placeholder="Descrição"></textarea>
-       
-                            </div> 
-                            <div class="input-group form-group col">
-                                <textarea class="form-control" rows="4" id="comment" placeholder="Texto certificado"></textarea>
-                            </div> 
-                        </div>        
+                                <textarea class="form-control" id="inputDescricao" rows="4" id="comment" placeholder="Descrição"></textarea>
+                            </div>                  
+                        </div>  
                         
-                        <button class="btn btn-lg  text-uppercase font-weight-bold mb-1 btn-danger" type="submit" id="botao"><i class="fa fa-trash"></i> Excluir</button>
-                        <button class="btn btn-lg  text-uppercase font-weight-bold mb-1 btn-success" type="submit" id="botao"><i class="fa fa-check"></i> Salvar</button>
+                        <div class="row">
+                          <label id ="labelImg" for="avatar">Choose a profile picture:</label>
+                          <input type="file" id="inputFoto" name="file" required autofocus>
+                        </div>
+
+                        <div class="row">
+                            <label id ="labelImg" for="avatar">Choose a profile picture:</label>
+                            <input type="file" id="inputBackground" name="file" required autofocus>
+                        </div>
+                        
+                        <button class="btn btn-lg  text-uppercase font-weight-bold mb-1 btn-success" type="submit" id="botao" onclick= "editar_entidade(event)"><i class="fa fa-check"></i> Salvar</button>
 
                       </form>
+                      <button class="btn btn-lg  text-uppercase font-weight-bold mb-1 btn-danger" id="botao" onclick="excluir_entidade(event)"><i class="fa fa-trash"></i> Excluir</button>
+
                     </div>
                 </div>
               </div>

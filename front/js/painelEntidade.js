@@ -35,9 +35,23 @@ function atualizar_tela() {
     });
 };
 
+function editarEvento(id){
+    console.log(id)
+    sessionStorage.setItem('id_evento', JSON.stringify(id));
+    //localStorage.setItem('id_evento', id);
+    alert('qyero dormir')
+    window.location.href = '../pages/editarEvento.html';
+}
+
+function participantesEvento(id){
+    sessionStorage.setItem('id_evento', JSON.stringify(id));
+    window.location.href = '../pages/participantesEvento.html';
+}
+
 function gerar_componente_device(evento, id_linha) {
     var dataInicio = evento["dataInicio"].split('T')[0]
     var dataFim = evento["dataFim"].split('T')[0]
+    var dict = {'id_evento':evento['_id']}
 
 
     $('#' + id_linha).append("<div class='column'>"+
@@ -50,7 +64,8 @@ function gerar_componente_device(evento, id_linha) {
                 "<div class='card-body'>" +
                     "<h4 class='card-title'>" + evento["nome"] + "</h4>" +
                     "<p class='card-text'>" + dataInicio + " - " + dataFim +"</p>" +
-                    "<a href='../pages/editarEvento.html'><button class='btn btn-lg  text-uppercase font-weight-bold mb-1' type='submit' id='botao'><i class='fa fa-pencil'></i></button></a>"+
+                    "<button class='btn btn-lg  text-uppercase font-weight-bold mb-1' onclick='editarEvento("+ JSON.stringify(dict) +")' id='botao'><i class='fa fa-pencil'></i></button>"+
+                    "<button class='btn btn-lg  text-uppercase font-weight-bold mb-1' onclick='participantesEvento("+ JSON.stringify(dict)  +")' id='botaoParticipacao'><i class='fa fa-pencil'></i></button>"+
                 "</div>" +
                 "</div>" +
             "</div>" +
@@ -64,3 +79,5 @@ function gerar_componente_device(evento, id_linha) {
 $(document).ready(function() {
     get_eventos();
 });
+
+//'../pages/editarEvento.html'
