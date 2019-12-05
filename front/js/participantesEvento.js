@@ -1,5 +1,7 @@
 const $tableID = $('#tableTexto');
 const $tableParticipacaoID = $('#tableParticipacao');
+const id = JSON.parse(sessionStorage.getItem('id_evento'))['id_evento'];
+
 
 var elemento;
 var botao;
@@ -59,14 +61,13 @@ function registrarTexto(){
 
     table.find('tr').each(function(indice){
         var texto = $(this).find('.texto').text();
-        var send_data = {"id_evento": sessionStorage.getItem('id_entidade'), "texto": texto};
+        var send_data = {"id_evento": id, "texto": texto};
         elemento = $(this).find('.numero')
 
         if(texto != ' '){ 
             if((texto.match(/@nome/g) || []).length > 0){
                 if((texto.match(/@cpf/g) || []).length > 0){
                     if((texto.match(/@horas/g) || []).length > 0){
-                        console.log("ENTROU")
                         $.ajax({
                             headers: { "Accept": "application/json" },
                             type: "POST",
@@ -112,7 +113,7 @@ function registrarParticipacao(){
         var texto = $(this).find('.texto').text();
         var ch = $(this).find('.ch').text();  
         if(valCpf(cpf)) { 
-            var send_data = {"id_evento": sessionStorage.getItem('id_entidade'), "nome_pessoa": nome, "cpf":cpf, "horas":ch, "texto":texto};
+            var send_data = {"id_evento": id, "nome_pessoa": nome, "cpf":cpf, "horas":ch, "texto":texto};
             $.ajax({
                 headers: { "Accept": "application/json" },
                 type: "POST",
