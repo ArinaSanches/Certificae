@@ -11,9 +11,9 @@ module.exports = {
     },
 
     async store(req, res) {
-        // console.log("AAAAAA");
-        // console.log(req.body);
-        const entidade = await Entidade.create(req.body);
+        var entidade = req.body;
+        entidade['foto'] = req.file['filename'];
+        entidade = await Entidade.create(entidade);
 
         const token = jwt.sign({id: entidade._id}, authConfig.secret, {
             expiresIn: 86400,
@@ -28,12 +28,19 @@ module.exports = {
     },
 
     async update(req, res) {
-        const entidade = await Entidade.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        var entidade = req.body;
+        try {
+            entidade['foto'] = req.file['filename'];
+        } finally {
+            entidade = await Entidade.findByIdAndUpdate(req.params.id, req.body, { new: true });   
+        }
         return res.json(entidade);
     },
 
     async destroy(req, res) {
         await Entidade.findByIdAndRemove(req.params.id);
+        console.log("AAAAAA");
+        console.log(req);
         return res.status(200).send("ok");
     },
 

@@ -62,10 +62,10 @@
               Lorem ipsu Lorem ipsu Lorem ipsu Lorem ipsu
             </p>
             <div class="row input-group input-group-lg">
-              <input type="text" id="input_cpf" class="form-control form-control-lg" placeholder="Digite o seu CPF" required autofocus>
+              <input type="text" id="cpf" class="form-control form-control-lg" placeholder="Digite o seu CPF" required autofocus pattern="^([1-9]|0[1-9]|[1,2][0-9]|3[0,1])/([1-9]|1[0,1,2])/\d{4}$">
 
               <!-- <button type="button" class="btn btn-light btn-circle"></button> -->
-              <button type="button" class="btn btn-light btn-circle btn-lg"><i class="fa fa-search"></i></i></i>
+              <button type="button" id="cpf" class="btn btn-light btn-circle btn-lg" onclick="buscar_certificados(event)"><i class="fa fa-search"></i></i></i>
             </div>
           </div>
 
