@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Participacao = mongoose.model('Participacao');
+const Texto = mongoose.model('Texto');
+
 
 module.exports = {
     async index(req, res) {
@@ -14,8 +16,15 @@ module.exports = {
     },
 
     async store(req, res) {
-        const participacao = await Participacao.create(req.body);
-        return res.json(participacao);
+        const { page = 1 } = req.query;
+        const textos = await Texto.paginate({"numero":req.body.texto}, { page, limit: 10 });
+        if(textos['docs'].length > 0){
+            const participacao = await Participacao.create(req.body);
+            return res.json(participacao);
+        }else{
+            res.status(404).send("Texto não encontrado");
+        }
+        
     },
 
     async show(req, res) {

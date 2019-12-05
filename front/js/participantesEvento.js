@@ -3,6 +3,7 @@ const $tableParticipacaoID = $('#tableParticipacao');
 
 var elemento;
 var botao;
+var textos = [];
 
 const newTr = "<tr>" +
         "<td class='pt-3-half texto' contenteditable='true'> </td>" +
@@ -56,6 +57,7 @@ function eliminarTexto(){
     $(this).parents('tr').detach();
 }
 
+
 function registrarParticipacao(){
     var table = $('#tabelaParticipacao');
 
@@ -63,10 +65,8 @@ function registrarParticipacao(){
         var nome = $(this).find('.nome').text();
         var cpf = $(this).find('.cpf').text();
         var texto = $(this).find('.texto').text();
-        var ch = $(this).find('.ch').text();
-
+        var ch = $(this).find('.ch').text();   
         var send_data = {"id_evento": sessionStorage.getItem('id_entidade'), "nome_pessoa": nome, "cpf":cpf, "horas":ch, "texto":texto};
-
         $.ajax({
             headers: { "Accept": "application/json" },
             type: "POST",
@@ -89,7 +89,6 @@ function registrarParticipacao(){
 function eliminarParticipacao(){
     $(this).parents('tr').detach();
 }
-
 
 $('#adicionarTexto').on('click', 'i', () => {
     $('#tabelaTexto').append(newTr);   
