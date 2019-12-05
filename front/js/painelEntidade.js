@@ -65,7 +65,7 @@ function gerar_componente_device(evento, id_linha) {
                     "<h4 class='card-title'>" + evento["nome"] + "</h4>" +
                     "<p class='card-text'>" + dataInicio + " - " + dataFim +"</p>" +
                     "<button class='btn btn-lg  text-uppercase font-weight-bold mb-1' onclick='editarEvento("+ JSON.stringify(dict) +")' id='botao'><i class='fa fa-pencil'></i></button>"+
-                    "<button class='btn btn-lg  text-uppercase font-weight-bold mb-1' onclick='participantesEvento("+ JSON.stringify(dict)  +")' id='botaoParticipacao'><i class='fa fa-pencil'></i></button>"+
+                    "<button class='btn btn-lg btn-success text-uppercase font-weight-bold mb-1' onclick='participantesEvento("+ JSON.stringify(dict)  +")' id='botaoParticipacao'><i class='fa fa-table fa-fw'></i></button>"+
                 "</div>" +
                 "</div>" +
             "</div>" +

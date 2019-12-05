@@ -158,6 +158,17 @@ body, html {
     border-radius: 2rem;
     float: right;
   }
+
+  #botaoParticipacao {
+    color: azure;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+    border-radius: 2rem;
+    float: right;
+    margin-right: 3%;
+  }
   
   input[type="date"]:before {
   content: attr(placeholder) !important;
