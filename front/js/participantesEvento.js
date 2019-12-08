@@ -227,7 +227,7 @@ function eliminarParticipacao(){
     $(this).parents('tr').detach();
 }
 
-function verificarLinhaVazio(){
+function verificarLinhaVazia(){
     if($('#tabelaTexto tr:last').length > 0){
         if($('#tabelaTexto tr:last .texto')[0].classList.contains("salvo")){
             return true;
@@ -237,7 +237,7 @@ function verificarLinhaVazio(){
     }return true;
 }
 
-function verificarLinhaVazioParticipacao(){
+function verificarLinhaVaziaParticipacao(){
     if($('#tabelaParticipacao tr:last').length > 0){
         if($('#tabelaParticipacao tr:last .nome')[0].classList.contains("salvo")){
             return true;
@@ -248,13 +248,13 @@ function verificarLinhaVazioParticipacao(){
 }
 
 $('#adicionarTexto').on('click', 'i', () => {
-    if(verificarLinhaVazio()){
+    if(verificarLinhaVazia()){
         $('#tabelaTexto').append(newTr);
     }   
 });
 
 $('#addParticipacao').on('click', 'i', () => {
-    if(verificarLinhaVazioParticipacao()){
+    if(verificarLinhaVaziaParticipacao()){
         $('#tabelaParticipacao').append(newTrParticipacao);  
     } 
 });

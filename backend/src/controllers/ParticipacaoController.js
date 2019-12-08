@@ -24,7 +24,7 @@ module.exports = {
                 const participacao = await Participacao.create(req.body);
                 return res.json(participacao);
             }else{
-                return res.status(404).send("Esta participação já foi cadastrada!");
+                return res.status(404).send("Participação duplicada, impossivel cadastrar!");
             }
         }else{
             return res.status(404).send("Texto não encontrado");
