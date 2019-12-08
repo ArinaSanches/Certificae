@@ -5,6 +5,7 @@ const id = JSON.parse(sessionStorage.getItem('id_evento'))['id_evento'];
 
 var elemento;
 var botao;
+var nome;
 
 function valCpf(value){
     value = value.replace('.','');
@@ -63,6 +64,7 @@ function registrarTexto(){
         var texto = $(this).find('.texto').text();
         var send_data = {"id_evento": id, "texto": texto};
         elemento = $(this).find('.numero')
+        nome = $(this).find('.texto')
 
         if(texto != ' '){ 
             if((texto.match(/@nome/g) || []).length > 0){
@@ -82,6 +84,7 @@ function registrarTexto(){
                                 xhr.setRequestHeader('Authorization','Bearer ' + sessionStorage.getItem('token'));
                             },
                             success: function(msg) {
+                                nome.replaceWith("<td class='pt-3-half texto salvo' contenteditable='false'>"+msg['texto'] +"</td>")
                                 elemento.replaceWith("<td class='pt-3-half numero' contenteditable='false'>"+msg['numero']+"</td>");
                             }
                         });
@@ -140,8 +143,20 @@ function eliminarParticipacao(){
     $(this).parents('tr').detach();
 }
 
+function verificarLinhaVazio(){
+    if($('#tabelaTexto tr:last').length > 0){
+        if($('#tabelaTexto tr:last .texto')[0].classList.contains("salvo")){
+            return true;
+        }else{
+            return false;
+        }
+    }return true;
+}
+
 $('#adicionarTexto').on('click', 'i', () => {
-    $('#tabelaTexto').append(newTr);   
+    if(verificarLinhaVazio()){
+        $('#tabelaTexto').append(newTr);
+    }   
 });
 
 $('#addParticipacao').on('click', 'i', () => {
