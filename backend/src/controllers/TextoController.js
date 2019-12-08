@@ -4,7 +4,7 @@ const Texto = mongoose.model('Texto');
 module.exports = {
     async index(req, res) {
         const { page = 1 } = req.query;
-        const textos = await Texto.paginate({}, { page, limit: 10 });
+        const textos = await Texto.paginate({"id_evento":req.query.id_evento}, { page, limit: 10 });
         return res.json(textos);
     },
 

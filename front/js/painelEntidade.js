@@ -15,10 +15,6 @@ function get_eventos(){
             success: function(msg) {
                 eventos = msg['docs'];
                 atualizar_tela();
-
-                // console.log(msg.token);
-                // sessionStorage.setItem('token', msg.token);
-                // window.location.href = '../pages/painelEntidade.html';
             }
         });
 };
