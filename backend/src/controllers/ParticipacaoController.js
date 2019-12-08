@@ -19,10 +19,15 @@ module.exports = {
         const { page = 1 } = req.query;
         const textos = await Texto.paginate({"numero":req.body.texto}, { page, limit: 10 });
         if(textos['docs'].length > 0){
-            const participacao = await Participacao.create(req.body);
-            return res.json(participacao);
+            const participacaoDuplicada = await Participacao.paginate({"nome_pessoa":req.body.nome_pessoa, "cpf":req.body.cpf, "horas":req.body.horas, "texto":req.body.texto},{page, limit:10});
+            if(participacaoDuplicada['docs'].length === 0){
+                const participacao = await Participacao.create(req.body);
+                return res.json(participacao);
+            }else{
+                return res.status(404).send("Esta participação já foi cadastrada!");
+            }
         }else{
-            res.status(404).send("Texto não encontrado");
+            return res.status(404).send("Texto não encontrado");
         }
         
     },

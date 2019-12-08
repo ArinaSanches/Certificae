@@ -158,6 +158,7 @@ function registrarTexto(){
                                     xhr.setRequestHeader('Authorization','Bearer ' + sessionStorage.getItem('token'));
                                 },
                                 success: function(msg) {
+                                    alert("Texto cadastrado com sucesso!");
                                     nome.replaceWith("<td class='pt-3-half texto salvo' id="+ msg['_id'] +" contenteditable='false'>"+msg['texto'] +"</td>")
                                     elemento.replaceWith("<td class='pt-3-half numero' contenteditable='false'>"+msg['numero']+"</td>");
                                 }
@@ -209,6 +210,10 @@ function registrarParticipacao(){
                     },
                     success: function(msg) {
                         nome.replaceWith("<td class='pt-3-half nome salvo' id="+msg['_id']+" contenteditable='false'>"+msg['nome_pessoa']+"</td>")
+                        alert("Participação cadastrada com sucesso");
+                    },
+                    error: function(request, status, error) {
+                        alert(request.responseText)
                     }
                 });
             } else {
