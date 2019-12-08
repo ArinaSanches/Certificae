@@ -26,7 +26,7 @@ $.ajax({
     }
 });
 
-function editar_entidade(e){
+function editar_evento(e){
     e.preventDefault();
     if(document.getElementById('formulario').checkValidity()){
         var nome = document.getElementById('inputNome').value;
@@ -59,7 +59,7 @@ function editar_entidade(e){
             },
             success: function(msg) {
                 console.log(msg);
-                console.log("entrei aq");
+                window.location.href = '../pages/painelEntidade.html';
             }
             });
         } else {
@@ -69,7 +69,7 @@ function editar_entidade(e){
 };
 
 
-function excluir_entidade(e){
+function excluir_evento(e){
     const token = sessionStorage.getItem('token');
         $.ajax({
             headers: { "Accept": "application/json" },
