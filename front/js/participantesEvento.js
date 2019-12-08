@@ -31,11 +31,11 @@ function carregarTextos(){
     if(textos.length > 0){
         textos.forEach((texto, index) => {
             var novoTexto = "<tr>" +
-                        "<td class='pt-3-half texto salvo'id="+texto['_id']+" contenteditable='false'>"+texto['texto'] +"</td>" +
+                        "<td class='pt-3-half texto salvo' contenteditable='false'>"+texto['texto'] +"</td>" +
                         "<td class='pt-3-half numero' contenteditable='false'>"+texto['numero'] +"</td>" +
                         "<td>"+
                         "<span class='table-add'><button type='button'" +
-                            "<button type='button'class='btn btn-danger btn-rounded btn-sm my-0'><i class='fa fa-trash'></i></button>"+
+                            "<button type='button'class='btn btn-danger btn-rounded btn-sm my-0' id='"+texto['_id']+"'><i class='fa fa-trash'></i></button>"+
                         "</td>"+
                     "</tr>"
             $('#tabelaTexto').append(novoTexto);
@@ -66,13 +66,13 @@ function carregarParticipacoes(){
     if(participacoes.length > 0){~
         participacoes.forEach((participacao, index) => {
             var novaParticipacao = "<tr>" +
-                                "<td class='pt-3-half nome salvo' id="+participacao['_id']+" contenteditable='false'>"+participacao['nome_pessoa']+"</td>" +
+                                "<td class='pt-3-half nome salvo' contenteditable='false'>"+participacao['nome_pessoa']+"</td>" +
                                 "<td class='pt-3-half cpf' contenteditable='false'>"+participacao['cpf']+"</td>" +
                                 "<td class='pt-3-half texto' contenteditable='false'>"+participacao['texto']+"</td>" +
                                 "<td class='pt-3-half ch' contenteditable='false'>"+participacao['horas']+"</td>" +
                                 "<td>"+
                                 "<span class='table-add'><button type='button'" +
-                                    "<button type='button'class='btn btn-danger btn-rounded btn-sm my-0'><i class='fa fa-trash'></i></button>"+
+                                    "<button type='button'class='btn btn-danger btn-rounded btn-sm my-0' id='"+participacao['_id']+"'><i class='fa fa-trash'></i></button>"+
                                 "</td>"+
                             "</tr>"
             $('#tabelaParticipacao').append(novaParticipacao);
@@ -136,9 +136,11 @@ function registrarTexto(){
             alert('Todos os textos já estão cadastrados!')
         }else{
             var texto = $('#tabelaTexto tr:last .texto').text();
-            var send_data = {"id_evento": id, "texto": texto};
             elemento = $('#tabelaTexto tr:last .numero');
             nome = $('#tabelaTexto tr:last .texto');
+            botao = $('#tabelaTexto tr:last .btn-danger');
+
+            var send_data = {"id_evento": id, "texto": texto};
     
             if(texto != ' '){ 
                 if((texto.match(/@nome/g) || []).length > 0){
@@ -158,9 +160,11 @@ function registrarTexto(){
                                     xhr.setRequestHeader('Authorization','Bearer ' + sessionStorage.getItem('token'));
                                 },
                                 success: function(msg) {
-                                    alert("Texto cadastrado com sucesso!");
-                                    nome.replaceWith("<td class='pt-3-half texto salvo' id="+ msg['_id'] +" contenteditable='false'>"+msg['texto'] +"</td>")
+                                    nome.replaceWith("<td class='pt-3-half texto salvo' contenteditable='false'>"+msg['texto'] +"</td>")
                                     elemento.replaceWith("<td class='pt-3-half numero' contenteditable='false'>"+msg['numero']+"</td>");
+                                    botao.attr("id", msg['_id']);
+                                    alert("Texto cadastrado com sucesso!");
+
                                 }
                             });
                         }else{
@@ -178,9 +182,26 @@ function registrarTexto(){
 }
 
 function eliminarTexto(){
-    $(this).parents('tr').detach();
+    const token = sessionStorage.getItem('token');
+    $.ajax({
+        headers: { "Accept": "application/json" },
+        type: "DELETE",
+        crossDomain: true,
+        url: "http://localhost:3004/api/texto/"+this.id,
+        contentType: 'application/json',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+            xhr.withCredentials = true;
+            xhr.setRequestHeader('Authorization','Bearer ' + token);
+        },
+        success: function(msg) {
+            
+        }
+    }).always(function(msg) {
+        window.location.reload();
+        alert("Texto eliminado com sucesso!")
+    });
 }
-
 
 function registrarParticipacao(){
     var table = $('#tabelaParticipacao');
@@ -189,13 +210,14 @@ function registrarParticipacao(){
         if($('#tabelaParticipacao tr:last .nome')[0].classList.contains("salvo")){
             alert('Todas as participações já estão cadastradas!')
         }else{
-            var nome_pessoa = $('#tabelaParticipacao tr:last .nome').text();
-            var cpf = $('#tabelaParticipacao tr:last .cpf').text();
-            var texto = $('#tabelaParticipacao tr:last .texto').text();
-            var ch = $('#tabelaParticipacao tr:last .ch').text();
-            nome = $('#tabelaParticipacao tr:last .nome');  
-            if(valCpf(cpf)) { 
-                var send_data = {"id_evento": id, "nome_pessoa": nome_pessoa, "cpf":cpf, "horas":ch, "texto":texto};
+            var nome_pessoa = $('#tabelaParticipacao tr:last .nome');
+            var cpf = $('#tabelaParticipacao tr:last .cpf');
+            var texto = $('#tabelaParticipacao tr:last .texto');
+            var ch = $('#tabelaParticipacao tr:last .ch');
+            botao = $('#tabelaParticipacao tr:last .btn-danger') 
+
+            if(valCpf(cpf.text())) { 
+                var send_data = {"id_evento": id, "nome_pessoa": nome_pessoa.text(), "cpf":cpf.text(), "horas":ch.text(), "texto":texto.text()};
                 $.ajax({
                     headers: { "Accept": "application/json" },
                     type: "POST",
@@ -209,7 +231,12 @@ function registrarParticipacao(){
                         xhr.setRequestHeader('Authorization','Bearer ' + sessionStorage.getItem('token'));
                     },
                     success: function(msg) {
-                        nome.replaceWith("<td class='pt-3-half nome salvo' id="+msg['_id']+" contenteditable='false'>"+msg['nome_pessoa']+"</td>")
+                        
+                        nome_pessoa.replaceWith("<td class='pt-3-half nome salvo' contenteditable='false'>"+msg['nome_pessoa']+"</td>")
+                        $(botao).attr("id", msg['_id']);
+                        $(cpf).attr('contenteditable', false)
+                        $(texto).attr('contenteditable', false)
+                        $(ch).attr('contenteditable', false)
                         alert("Participação cadastrada com sucesso");
                     },
                     error: function(request, status, error) {
@@ -224,7 +251,25 @@ function registrarParticipacao(){
 }
 
 function eliminarParticipacao(){
-    $(this).parents('tr').detach();
+    const token = sessionStorage.getItem('token');
+    $.ajax({
+        headers: { "Accept": "application/json" },
+        type: "DELETE",
+        crossDomain: true,
+        url: "http://localhost:3004/api/participacao/"+this.id,
+        contentType: 'application/json',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+            xhr.withCredentials = true;
+            xhr.setRequestHeader('Authorization','Bearer ' + token);
+        },
+        success: function(msg) {
+            
+        }
+    }).always(function(msg) {
+        window.location.reload();
+        alert("Participação eliminada com sucesso!")
+    });
 }
 
 function verificarLinhaVazia(){

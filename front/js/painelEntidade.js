@@ -35,7 +35,6 @@ function editarEvento(id){
     console.log(id)
     sessionStorage.setItem('id_evento', JSON.stringify(id));
     //localStorage.setItem('id_evento', id);
-    alert('qyero dormir')
     window.location.href = '../pages/editarEvento.html';
 }
 

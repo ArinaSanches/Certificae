@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Texto = mongoose.model('Texto');
+const Participacao = mongoose.model('Participacao');
+
 
 module.exports = {
     async index(req, res) {
@@ -24,6 +26,8 @@ module.exports = {
     },
 
     async destroy(req, res) {
+        const texto = await Texto.findById(req.params.id);
+        await Participacao.deleteMany({"texto": texto.numero})
         await Texto.findByIdAndRemove(req.params.id);
         return res.status(200).send("ok");
     },
