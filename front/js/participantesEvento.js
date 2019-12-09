@@ -8,6 +8,26 @@ var nome;
 var textos = []
 var participacoes = []
 
+
+function carregarFotoEntidade(){
+    $.ajax({
+        headers: { "Accept": "application/json" },
+        type: "GET",
+        crossDomain: true,
+        url: "http://localhost:3004/api/entidade/"+ sessionStorage.getItem('id_entidade') ,
+        contentType: 'application/json',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+            xhr.withCredentials = true;
+            xhr.setRequestHeader('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        },
+        success: function(msg) {
+            console.log(msg)
+            $('#imagEntidade').replaceWith("<li class='nav-header'><img src='../../backend/temp/uploads/"+ msg['foto'] +"' id = 'logo'></li>")
+        }
+    });
+}
+
 function get_textos(){
     $.ajax({
         headers: { "Accept": "application/json" },
@@ -313,6 +333,7 @@ $tableParticipacaoID.on('click', '#botaoCadastrar', registrarParticipacao);
 $tableParticipacaoID.on('click', '.btn-danger', eliminarParticipacao);
 
 $(document).ready(function() {
+    carregarFotoEntidade();
     get_textos();
     get_participações();
 });

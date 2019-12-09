@@ -6,6 +6,23 @@ $.ajax({
     headers: { "Accept": "application/json" },
     type: "GET",
     crossDomain: true,
+    url: "http://localhost:3004/api/entidade/"+ sessionStorage.getItem('id_entidade') ,
+    contentType: 'application/json',
+    dataType: 'json',
+    beforeSend: function(xhr) {
+        xhr.withCredentials = true;
+        xhr.setRequestHeader('Authorization','Bearer ' + sessionStorage.getItem('token'));
+    },
+    success: function(msg) {
+        console.log(msg)
+        $('#imagEntidade').replaceWith("<li class='nav-header'><img src='../../backend/temp/uploads/"+ msg['foto'] +"' id = 'logo'></li>")
+    }
+});
+
+$.ajax({
+    headers: { "Accept": "application/json" },
+    type: "GET",
+    crossDomain: true,
     url: "http://localhost:3004/api/entidade/"+id,
     processData: false,
     contentType: false,

@@ -1,3 +1,22 @@
+function carregarFotoEntidade(){
+    $.ajax({
+        headers: { "Accept": "application/json" },
+        type: "GET",
+        crossDomain: true,
+        url: "http://localhost:3004/api/entidade/"+ sessionStorage.getItem('id_entidade') ,
+        contentType: 'application/json',
+        dataType: 'json',
+        beforeSend: function(xhr) {
+            xhr.withCredentials = true;
+            xhr.setRequestHeader('Authorization','Bearer ' + sessionStorage.getItem('token'));
+        },
+        success: function(msg) {
+            console.log(msg)
+            $('#imagEntidade').replaceWith("<li class='nav-header'><img src='../../backend/temp/uploads/"+ msg['foto'] +"' id = 'logo'></li>")
+        }
+    });
+}
+
 function cadastrarEvento(e){
     e.preventDefault();
     if(document.getElementById('formulario').checkValidity()){
@@ -39,6 +58,9 @@ function cadastrarEvento(e){
 var cadastrar = document.getElementById('botaoCadastrar');
 cadastrar.onclick = cadastrarEvento;
 
+$(document).ready(function() {
+    carregarFotoEntidade();
+});
 
 
 
