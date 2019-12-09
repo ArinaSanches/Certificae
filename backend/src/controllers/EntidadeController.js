@@ -12,14 +12,21 @@ module.exports = {
 
     async store(req, res) {
         var entidade = req.body;
-        entidade['foto'] = req.file['filename'];
-        entidade = await Entidade.create(entidade);
+        var existe = await Entidade.find({'login': entidade.login});
+        // console.log(existe);
+        if(existe.length === 0) {
+            entidade['foto'] = req.file['filename'];
+            entidade = await Entidade.create(entidade);
 
-        const token = jwt.sign({id: entidade._id}, authConfig.secret, {
-            expiresIn: 86400,
-        });
+            const token = jwt.sign({id: entidade._id}, authConfig.secret, {
+                expiresIn: 86400,
+            });
 
-        res.send({entidade, token});
+            res.send({entidade, token});
+        } else {
+            res.status(400).send({"error": "Este e-mail já existe!"});
+        }
+        
     },
 
     async show(req, res) {

@@ -31,7 +31,12 @@ function cadastrar_entidade(e){
                 sessionStorage.setItem('token', msg.token);
                 sessionStorage.setItem('id_entidade', msg.entidade._id);
                 window.location.href = '../pages/painelEntidade.html';
-            }
+            },
+            statusCode: {
+                400: (msg) => {
+                    alert(msg.responseJSON.error);
+                }
+            },
         });
     } else {
         alert("Campos inválidos!");
