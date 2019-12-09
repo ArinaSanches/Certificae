@@ -35,7 +35,7 @@ function carregarTextos(){
                         "<td class='pt-3-half numero' contenteditable='false'>"+texto['numero'] +"</td>" +
                         "<td>"+
                         "<span class='table-add'><button type='button'" +
-                            "<button type='button'class='btn btn-danger btn-rounded btn-sm my-0' id='"+texto['_id']+"'><i class='fa fa-trash'></i></button>"+
+                            "<button type='button'class='btn btn-danger btn-rounded btn-sm my-0' id="+texto['_id']+"><i class='fa fa-trash'></i></button>"+
                         "</td>"+
                     "</tr>"
             $('#tabelaTexto').append(novoTexto);
@@ -72,7 +72,7 @@ function carregarParticipacoes(){
                                 "<td class='pt-3-half ch' contenteditable='false'>"+participacao['horas']+"</td>" +
                                 "<td>"+
                                 "<span class='table-add'><button type='button'" +
-                                    "<button type='button'class='btn btn-danger btn-rounded btn-sm my-0' id='"+participacao['_id']+"'><i class='fa fa-trash'></i></button>"+
+                                    "<button type='button'class='btn btn-danger btn-rounded btn-sm my-0' id="+participacao['_id']+"><i class='fa fa-trash'></i></button>"+
                                 "</td>"+
                             "</tr>"
             $('#tabelaParticipacao').append(novaParticipacao);
