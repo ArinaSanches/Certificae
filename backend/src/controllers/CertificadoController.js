@@ -22,7 +22,10 @@ async function gerar_certificado(texto, img_base, nome_img){
     // //TODO: Verificação pra quando for a ultima rodada
     // for(i = 0; i < texto.length; i += 100){
     // console.log(texto.substr(i, i+=99));
-        textoSVG += `<text x="10" y="40" style="font-family: Times New Roman; font-size: 20; stroke: none; fill: black; text-align: center">` + texto.substr(i, i+=120) +`</text>`
+    if(texto.length >= 120)
+        textoSVG += `<text x="10" y="40" style="font-family: Times New Roman; font-size: 20; stroke: none; fill: black; text-align: center">` + texto.substr(i, i+=120) +`</text>`;
+    else
+        textoSVG += `<text x="10" y="40" style="font-family: Times New Roman; font-size: 20; stroke: none; fill: black; text-align: center">` + texto +`</text>`;
     //     x += 
     // }
 
@@ -77,7 +80,7 @@ async function get_infos(participacao){
                 'horas': participacao.horas,
                 'texto': texto_final,
                 'evento': evento.nome,
-                'nome_img_certificado': participacao.cpf + '_' + evento.nome + ".png"
+                'nome_img_certificado': participacao.cpf + '_' + participacao.horas + '_' + evento.nome + ".png"
     }; 
 
     await gerar_certificado(texto_final, path.resolve("temp/uploads/"+evento.background), path.resolve("temp/certificados/"+certificado.nome_img_certificado));

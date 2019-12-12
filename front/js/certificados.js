@@ -18,19 +18,19 @@ function gerar_componente_device(certificado, id_linha) {
           "<div class='col-md-4'>" +
             "<h3>" +  certificado['evento'] +"</h3>" + // BOTAR NOME DO EVENTO
             "<a class='btn btn-primary' href='../../backend/temp/certificados/" + certificado['nome_img_certificado'] +"' download= ='../../backend/temp/certificados/" + certificado['nome_img_certificado'] +"'>Download certificado</a>" + 
-          "</div>" +
+          "</div>" 
         // "</div>" +
-        "<hr>" 
     );    
 }
 
 
 function atualizar_tela() {
     console.log(certificados)
-    var id;
+    var id = 0;
     certificados.forEach((certificado, index) => {
-        $("#conteudo").append("<div id = row_" + id + " class='row'> </div>");
+        $("#conteudo").append("<div id = row_" + id + " class='row'> </div> <br><hr><br>");
         gerar_componente_device(certificado, "row_" + id);
+        id = id + 1;
     });
 };
 
