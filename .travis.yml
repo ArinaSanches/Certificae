@@ -2,3 +2,5 @@ deploy:
   provider: pypi
   user: "__token__"
   password: "Your PyPI API token, including the pypi- prefix"
+  on:
+    tags: true
