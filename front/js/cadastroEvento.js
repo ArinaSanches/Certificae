@@ -14,8 +14,7 @@ function carregarFotoEntidade(){
             console.log(msg)
             $('#imagEntidade').replaceWith("<li class='nav-header'><img src='../../backend/temp/uploads/"+ msg['foto'] +"' id = 'logo'></li>")
         }
-    });
-}
+
 
 function cadastrarEvento(e){
     e.preventDefault();
